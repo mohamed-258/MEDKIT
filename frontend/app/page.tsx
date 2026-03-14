@@ -115,7 +115,7 @@ export default function Home() {
             <h2>{card.title}</h2>
             <p>{card.desc}</p>
 
-            <Link href={card.link}>
+            <Link href={card.link} style={{ width: '100%' }}>
               <button
                 className="action-btn"
                 style={{ backgroundColor: card.color }}
@@ -132,113 +132,134 @@ export default function Home() {
         <p>Start your medical journey today with <strong>MEDKIT</strong>. © 2026 All Rights Reserved.</p>
       </footer>
 
-<style jsx>{`
+      {/* التنسيقات العامة لحل مشكلة الفراغ على اليمين */}
+      <style jsx global>{`
+        *, *::before, *::after {
+          box-sizing: border-box;
+        }
+        body, html {
+          margin: 0;
+          padding: 0;
+          overflow-x: hidden; /* يمنع ظهور شريط التمرير الأفقي تماماً */
+          background-color: #020617;
+        }
+      `}</style>
 
-.container{
-  min-height:100vh;
-  background:#020617;
-  color:white;
-  padding:40px 5%;
-  font-family:system-ui;
-}
+      {/* تنسيقات المكونات */}
+      <style jsx>{`
+        .container {
+          min-height: 100vh;
+          width: 100%; /* تأكيد على عدم تجاوز عرض الشاشة */
+          background: #020617;
+          color: white;
+          padding: 40px 5%;
+          font-family: system-ui;
+        }
 
-.navbar{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  margin-bottom:80px;
-}
+        .navbar {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: 80px;
+        }
 
-.logo{
-  font-size:28px;
-  font-weight:800;
-}
+        .logo {
+          font-size: 28px;
+          font-weight: 800;
+        }
 
-.logo span{
-  color:#38bdf8;
-}
+        .logo span {
+          color: #38bdf8;
+        }
 
-.menu{
-  display:flex;
-  gap:30px;
-}
+        .menu {
+          display: flex;
+          gap: 30px;
+        }
 
-.menu a{
-  color:#94a3b8;
-  text-decoration:none;
-}
+        .menu a {
+          color: #94a3b8;
+          text-decoration: none;
+          transition: color 0.3s ease;
+        }
 
-.menu a:hover{
-  color:white;
-}
+        .menu a:hover {
+          color: white;
+        }
 
-.header{
-  text-align:center;
-  margin-bottom:60px;
-}
+        .header {
+          text-align: center;
+          margin-bottom: 60px;
+        }
 
-.header h1{
-  font-size:48px;
-}
+        .header h1 {
+          font-size: 48px;
+          margin-bottom: 10px;
+        }
 
-.header span{
-  color:#38bdf8;
-}
+        .header span {
+          color: #38bdf8;
+        }
 
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:30px;
-  max-width:1200px;
-  margin:auto;
-}
+        .grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+          gap: 30px;
+          max-width: 1200px;
+          margin: auto;
+          width: 100%;
+        }
 
-.card{
-  background:#0f172a;
-  border-radius:18px;
-  padding:30px;
-  text-align:center;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-}
+        .card {
+          background: #0f172a;
+          border-radius: 18px;
+          padding: 30px;
+          text-align: center;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
 
-.icon-wrapper{
-  width:80px;
-  height:80px;
-  border-radius:20px;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  margin-bottom:20px;
-}
+        .icon-wrapper {
+          width: 80px;
+          height: 80px;
+          border-radius: 20px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-bottom: 20px;
+        }
 
-.card h2{
-  margin-bottom:10px;
-}
+        .card h2 {
+          margin-bottom: 10px;
+        }
 
-.card p{
-  color:#94a3b8;
-  margin-bottom:20px;
-}
+        .card p {
+          color: #94a3b8;
+          margin-bottom: 20px;
+        }
 
-.action-btn{
-  border:none;
-  padding:12px;
-  border-radius:10px;
-  color:white;
-  cursor:pointer;
-  width:100%;
-}
+        .action-btn {
+          border: none;
+          padding: 12px;
+          border-radius: 10px;
+          color: white;
+          cursor: pointer;
+          width: 100%;
+          font-weight: 600;
+          transition: filter 0.3s ease;
+        }
 
-.footer{
-  text-align:center;
-  margin-top:80px;
-  color:#64748b;
-}
+        .action-btn:hover {
+          filter: brightness(1.1);
+        }
 
-`}</style>
-
+        .footer {
+          text-align: center;
+          margin-top: 80px;
+          color: #64748b;
+        }
+      `}</style>
     </div>
   )
 }
