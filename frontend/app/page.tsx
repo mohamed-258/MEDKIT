@@ -172,7 +172,7 @@ export default function Home() {
         }
 
         .navbar {
-          display: flex;
+          
           justify-content: space-between;
           align-items: center;
           margin-bottom: 80px;
@@ -191,7 +191,7 @@ export default function Home() {
         }
 
         .menu {
-          display: flex;
+          
           gap: 35px;
         }
 
@@ -262,7 +262,7 @@ export default function Home() {
           padding: 35px 25px;
           text-align: center;
           border: 1px solid rgba(255, 255, 255, 0.05);
-          display: flex;
+          
           flex-direction: column;
           align-items: center;
         }
@@ -271,9 +271,9 @@ export default function Home() {
           width: 80px;
           height: 80px;
           border-radius: 20px;
-          display: flex;
+          
           align-items: center;
-          justify-content: center;
+          
           margin-bottom: 24px;
         }
 
